@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Ojuju:wght@200..800&display=swap');
+
+body{
+ background: url("./images/earthy\ image\ 3.png");
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100vw;
+ height: 100vh;
+ overflow: hidden;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ font-family: "Dosis", sans-serif;
+ transition: all ease 1s;
+}
+
+.mainContainer {
+
+ width: 50%;
+ height: 70%;
+ background: rgba(255, 255, 255, 0.2);
+ border-radius: 16px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(5px);
+ -webkit-backdrop-filter: blur(5px);
+ border: 1px solid rgba(255, 255, 255, 0.3);
+ overflow-x: hidden;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ font-size: 2rem;
+ font-weight: bold;
+ word-spacing: 4px;
+ letter-spacing: 3px;
+
+}
+
+.navbar{
+
+ width: 90%;
+ height: 15%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ border: 2px solid white;
+ border-radius: 12px;
+
+}
+
+.title{
+
+ width: 70%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: default;
+ /* border: 1px solid black; */
+}
+
+.icon{
+
+ width: 6.5%;
+ height: 60%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: black;
+ border-radius: 50%;
+ border: 2px solid white;
+ cursor: pointer;
+
+}
+
+.taskContainer{
+
+ width: 90%;
+ height: 80%;
+ border: 2px solid white;
+ border-radius: 12px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+
+}
+
+.date-day{
+
+ width: 90%;
+ height: 15%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ font-size: 1rem;
+ background: rgba(255, 255, 255, 0.49);
+ border-radius: 16px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(8.3px);
+ -webkit-backdrop-filter: blur(8.3px);
+ border: 1px solid rgba(255, 255, 255, 1);
+ cursor: default;
+}
+
+.day{
+
+ width: 40%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+}
+
+.time{
+
+ width: 40%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.tasks{
+
+ overflow: auto;
+ width: 90%;
+ height: 80%;
+ /* border: 1px solid black; */
+ border-radius: 12px;
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 1vh;
+ transition: all ease 1s;
+}
+
+.tasks::-webkit-scrollbar{
+
+ display: none;
+}
+
+.task{
+
+ width: 85%;
+ height: fit-content;
+ text-align: center;
+ padding: 20px;
+ background: rgba(255, 255, 255, 0.49);
+ border-radius: 16px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(8.3px);
+ -webkit-backdrop-filter: blur(8.3px);
+ border: 1px solid rgba(255, 255, 255, 1);
+ font-size: 1rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ transition: all ease 1s;
+
+}
+
+.taskName{
+
+ width: 60%;
+ height: 100%;
+ cursor: default;
+
+}
+
+span{
+
+ cursor: pointer;
+}
+
+.timeTag{
+
+ width: 10%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: default;
+
+}
+.icons{
+
+ width: 10%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+
+.icons i{
+
+ cursor: pointer;
+}
+
+.addTask{
+
+ width: 40px;
+ height: 40px;
+ color: white;
+ background: rgba(255, 255, 255, 0.49);
+ border-radius: 50%;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(8.3px);
+ -webkit-backdrop-filter: blur(8.3px);
+ border: 1px solid rgba(255, 255, 255, 1);
+ position: absolute;
+ left: 660px;
+ top: 420px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 1rem;
+ cursor: pointer;
+
+}
+
+#plus{
+
+ margin-left: 3px;
+}
+
+.addTaskContainer{
+
+ display: none;
+ z-index: 1;
+ position: absolute;
+ width: 40%;
+ height: 70%;
+ background: rgba(255, 255, 255, 0.2);
+ border-radius: 16px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(5px);
+ -webkit-backdrop-filter: blur(5px);
+ border: 1px solid rgba(255, 255, 255, 0.3);
+ overflow-x: hidden;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ font-size: 2rem;
+ font-weight: bold;
+ word-spacing: 4px;
+ letter-spacing: 3px;
+
+}
+
+.inputs{
+
+ width: 90%;
+ height: 20%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ 
+
+}
+
+#textInput{
+
+ width: 60%;
+ height: 50%;
+ background: rgba(255, 255, 255, 0.49);
+ border-radius: 16px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(8.3px);
+ -webkit-backdrop-filter: blur(8.3px);
+ border: 1px solid rgba(255, 255, 255, 1);
+ font-size: 1rem;
+}
+
+#timeInput{
+
+ width: 25%;
+ height: 50%;
+ background: rgba(255, 255, 255, 0.49);
+ border-radius: 16px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(8.3px);
+ -webkit-backdrop-filter: blur(8.3px);
+ border: 1px solid rgba(255, 255, 255, 1);
+ font-size: 1rem;
+}
+
+.btns{
+
+ width: 80%;
+ height: 15%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ font-weight: bold;
+ font-size: 1rem;
+}
+
+.addTaskBtn{
+
+ width: 30%;
+ height: 60%;
+ border-radius: 12px;
+ border: 2px solid white;
+ background-color: rgba(255, 255, 255, 0.49);
+}

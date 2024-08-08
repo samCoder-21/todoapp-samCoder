@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>To Do App</title>
+ <link rel="stylesheet" href="./style.css">
+ <script src="https://kit.fontawesome.com/2ae1fdcc9d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <div class="mainContainer">
+  <div class="navbar">
+   <div class="title">My Tasks</div>
+   <button class="icon">
+    <i id="moon" title="night mode" class="fa-solid fa-moon" style="color:white;"></i>
+   </button>
+   </div>
+
+  <div class="taskContainer">
+   
+   <div class="date-day">
+    <div class="day"></div>
+    <div class="time"></div>
+   </div><!-- end of date-day div  -->
+
+   <div class="tasks">
+
+    <div class="task">
+
+     <span><i class="fa-regular fa-thumbs-up" onclick="if(this.classList == 'fa-regular fa-thumbs-up'){this.classList = 'fa-solid fa-thumbs-up';this.parentElement.parentElement.children[1].style.textDecoration = 'line-through';this.parentElement.parentElement.children[2].style.textDecoration = 'line-through'}else{this.classList = 'fa-regular fa-thumbs-up';this.parentElement.parentElement.children[1].style.textDecoration = 'none';this.parentElement.parentElement.children[2].style.textDecoration = 'none'};saveData()"></i></span>
+     
+     <div class="timeTag">7:00</div>
+     
+     <div class="taskName">Wake Up!!</div>
+
+     <div class="icons">
+      <i class="fa-solid fa-x" onclick="this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);saveData()"></i>
+     </div>
+
+    </div><!-- end of first tasks -->
+
+    <div class="task">
+
+     <span><i class="fa-regular fa-thumbs-up" onclick="if(this.classList == 'fa-regular fa-thumbs-up'){this.classList = 'fa-solid fa-thumbs-up';this.parentElement.parentElement.children[1].style.textDecoration = 'line-through';this.parentElement.parentElement.children[2].style.textDecoration = 'line-through'}else{this.classList = 'fa-regular fa-thumbs-up';this.parentElement.parentElement.children[1].style.textDecoration = 'none';this.parentElement.parentElement.children[2].style.textDecoration = 'none'};saveData()"></i></span>
+     
+     <div class="timeTag">8:00</div>
+     
+     <div class="taskName">Do Some Exercise >></div>
+
+     <div class="icons">
+      <i class="fa-solid fa-x" onclick="this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);saveData()"></i>
+     </div>
+     
+    </div><!-- end of second tasks -->
+
+    <div class="task">
+
+     <span><i class="fa-regular fa-thumbs-up" onclick="if(this.classList == 'fa-regular fa-thumbs-up'){this.classList = 'fa-solid fa-thumbs-up';this.parentElement.parentElement.children[1].style.textDecoration = 'line-through';this.parentElement.parentElement.children[2].style.textDecoration = 'line-through'}else{this.classList = 'fa-regular fa-thumbs-up';this.parentElement.parentElement.children[1].style.textDecoration = 'none';this.parentElement.parentElement.children[2].style.textDecoration = 'none'};saveData()"></i></span>
+     
+     <div class="timeTag">9:00</div>
+     
+     <div class="taskName">Go to Collage....</div>
+
+     <div class="icons">
+      <i class="fa-solid fa-x" onclick="this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);saveData()"></i>
+     </div>
+     
+    </div><!-- end of third tasks -->
+   </div><!-- end of tasks -->
+   <div class="addTask">
+    <i id="plus" class="fa-solid fa-plus"></i>
+   </div>
+  </div>
+ </div>
+ <div class="addTaskContainer">
+  <i id="X" class="fa-solid fa-x"></i>
+  <div class="inputs">
+   <input id="timeInput" type="time">
+   <input id="textInput" type="text" placeholder="Give A Title to Your Task...">
+  </div>
+  <div class="btns">
+   <button class="addTaskBtn">Add Task</button>
+  </div>
+ </div>
+ <script src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+Code For Explanation :
+
+
+//date time variables :
+
+const day = document.querySelector('.day')
+
+const date = new Date()
+
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Nov','Dec']
+
+day.innerHTML = `${days[date.getDay()]}<br>${date.getDate()}-${months[date.getMonth()]}-${date.getFullYear()}`
+
+//time function :
+function startTime() {
+
+ const date1 = new Date();
+
+ document.querySelector('.time').innerHTML = date1.toLocaleTimeString();
+
+ setTimeout(startTime(), 1000)
+}
+
+startTime()
+
+// adding task page :
+
+const addTask = document.querySelector('.addTask')
+
+const mainContainer = document.querySelector('.mainContainer')
+
+const cancel = document.querySelector('#X')
+
+const addTaskContainer = document.querySelector('.addTaskContainer')
+
+addTask.addEventListener('click',()=>{
+
+ addTaskContainer.style.display = 'flex'
+ mainContainer.style.display = 'none'
+
+})
+
+cancel.addEventListener('click',()=>{
+ addTaskContainer.style.display = 'none'
+ mainContainer.style.display = 'flex'
+
+})
+
+// adding task on main page :
+
+const mainTaskContainer = document.querySelector('.taskContainer')
+ 
+const timeInput = document.querySelector('#timeInput')
+
+const textInput = document.querySelector('#textInput')
+ 
+const addTaskBtn = document.querySelector('.addTaskBtn')
+
+addTaskBtn.addEventListener('click',()=>{
+
+ //main Container :
+ const taskContainer = document.createElement('div')
+
+ taskContainer.className = 'task'
+
+ // first child Container :
+ const span = document.createElement('span')
+
+ //span's child :
+
+ const iThumb = document.createElement('i')
+ 
+ iThumb.classList = "fa-regular fa-thumbs-up"
+
+ iThumb.setAttribute("onclick","if(this.classList == 'fa-regular fa-thumbs-up'){this.classList = 'fa-solid fa-thumbs-up';this.parentElement.parentElement.childNodes[1].style.textDecoration = 'line-through';this.parentElement.parentElement.childNodes[2].style.textDecoration = 'line-through'}else{this.classList = 'fa-regular fa-thumbs-up';this.parentElement.parentElement.childNodes[1].style.textDecoration = 'none';this.parentElement.parentElement.childNodes[2].style.textDecoration = 'none'}")  
+ //adding iThumb in span tag :
+
+ span.appendChild(iThumb)
+
+ //creating time tag :
+
+ const timeTag = document.createElement('div')
+
+ timeTag.className = "timeTag"
+
+ timeTag.innerHTML = timeInput.value
+
+ //creating taskname Container :
+
+ const taskNameContainer = document.createElement('div')
+
+ taskNameContainer.className = "taskName"
+
+ taskNameContainer.innerHTML = textInput.value
+
+ //creating icons tag :
+
+ const iconsTag = document.createElement('div')
+
+ iconsTag.className = "icons"
+
+ //creating x icon :
+
+ const xIcon = document.createElement('i')
+
+ xIcon.classList = "fa-solid fa-x"
+
+ xIcon.setAttribute('onclick',"this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement)")
+ //appending xIcon in iconsTag :
+
+ iconsTag.appendChild(xIcon)
+
+ //adding all child tags into taskContainer :
+
+ taskContainer.appendChild(span)
+ taskContainer.appendChild(timeTag)
+ taskContainer.appendChild(taskNameContainer)
+ taskContainer.appendChild(iconsTag)
+
+ //appending task in mainContainer :
+
+ taskContainer.append(taskContainer)
+
+ //changing pages :
+ addTaskContainer.style.display = 'none'
+ mainContainer.style.display = 'flex'
+
+})
+
+
+//task gets done : 
+
+const thumb = document.querySelectorAll('.thumb')
+
+for(let i = 0 ; i < thumb.length ; i++){
+
+ thumb[i].addEventListener('click',()=>{
+
+ if(thumb[i].className == 'thumb'){
+ thumb[i].className = 'clickedThumb'
+ thumb[i].parentElement.childNodes[3].style.textDecoration = 'line-through'
+ thumb[i].parentElement.childNodes[5].style.textDecoration = 'line-through'
+
+ }
+ else{
+ thumb[i].className = 'thumb'
+ thumb[i].parentElement.childNodes[3].style.textDecoration = 'none'
+ thumb[i].parentElement.childNodes[5].style.textDecoration = 'none'
+
+ }
+ })
+}
+
+
+//vanishing task by one click(snap):
+
+const clear = document.querySelectorAll('.icons')
+
+for(let r = 0 ; r < clear.length ; r++){
+ 
+ clear[r].addEventListener('click',()=>{
+
+ clear[r].parentElement.style.display = 'none'
+
+ // saveTask()
+
+ })
+}
